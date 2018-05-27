@@ -1,3 +1,5 @@
+var mongoose = require('mongoose');
+
 var Todo = mongoose.model('Todo', {
     text: {
         type: String,
@@ -15,10 +17,19 @@ var Todo = mongoose.model('Todo', {
     }
 });
 
+module.exports = {Todo};
 
 
+/*
 var newTodo = new Todo({
     text: 'Cook Dinner',
     completed: false,
     completedAt: 12
 });
+
+newTodo.save().then((doc) => {
+    console.log('Save todo:', doc);
+}, (err) => {
+    console.log('Unable to save todo, ', err);
+});
+*/
