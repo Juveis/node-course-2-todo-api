@@ -17,6 +17,7 @@ app.post('/todos', (req, res) => {
 
     todo.save().then(doc => {
         res.status(200).send(doc);
+        console.log('Todo save nitido --> ', doc);
     }, e => {
         res.status(400).send(e);
     }).catch(e => {
